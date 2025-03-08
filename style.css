@@ -1,0 +1,647 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f0c3fc, #a6e3e9);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c4763;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+/* Animasi Kucing */
+.loading-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.9rem;
+  }
+  
+  .cat {
+    margin: auto;
+    position: relative;
+    width: 16em;
+    height: 16em;
+  }
+  .cat__segment {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3em;
+    height: 2em;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cat__segment:before {
+    animation: loop 2s cubic-bezier(0.6, 0, 0.4, 1)
+                                  infinite running;
+    background: linear-gradient(90deg,
+                          white 20%,
+                    #e6e6e6 20% 80%,
+                         white 80%);
+    border-radius: 0.25em;
+    content: "";
+    display: block;
+    will-change: transform;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cat__segment:first-of-type {
+    width: 4em;
+    height: 4em;
+    z-index: 1;
+  }
+  .cat__segment:first-of-type:before {
+    background: radial-gradient(0.25em 0.25em at 1.25em 1.6em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(0.75em 0.75em at 1.25em 1.75em, #1a1a1a 48%, rgba(26, 26, 26, 0) 50%), radial-gradient(0.25em 0.25em at 2.75em 1.6em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(0.75em 0.75em at 2.75em 1.75em, #1a1a1a 48%, rgba(26, 26, 26, 0) 50%), radial-gradient(0.9em 0.8em at 1.5em 2.65em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(0.9em 0.8em at 2.5em 2.65em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(1em 0.8em at 1.6em 2.75em, #cccccc 48%, rgba(204, 204, 204, 0) 50%), radial-gradient(1em 0.8em at 2.4em 2.75em, #cccccc 48%, rgba(204, 204, 204, 0) 50%), radial-gradient(0.75em 0.75em at 50% 2.5em, #e69999 48%, rgba(230, 153, 153, 0) 50%), radial-gradient(4em 3em at 50% 2em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(4em 3em at 50% 2.2em, #cccccc 48%, rgba(204, 204, 204, 0) 50%), radial-gradient(1em 3em at 0.75em 1.5em, #e69999 39%, white 40% 49%, rgba(255, 255, 255, 0) 50%), radial-gradient(1em 3em at 3.25em 1.5em, #e69999 39%, white 40% 49%, rgba(255, 255, 255, 0) 50%), radial-gradient(1em 2em at 0.5em 2.8em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(1em 2em at 0.5em 3em, #cccccc 48%, rgba(204, 204, 204, 0) 50%), radial-gradient(1em 2em at 3.5em 2.8em, white 48%, rgba(255, 255, 255, 0) 50%), radial-gradient(1em 2em at 3.5em 3em, #cccccc 48%, rgba(204, 204, 204, 0) 50%);
+    background-repeat: no-repeat;
+  }
+  .cat__segment:last-of-type {
+    width: 3em;
+    height: 4em;
+  }
+  .cat__segment:last-of-type:before {
+    background: linear-gradient(90deg, white 20%, #e6e6e6 20% 80%, white 80%) 0 1.5em/3em 0.5em, radial-gradient(3em 2em at top center, #e6e6e6 30%, white 31% 48%, rgba(255, 255, 255, 0) 50%) 0 2em/3em 2em, radial-gradient(1em 4em at 0.5em 0, white 48%, rgba(255, 255, 255, 0) 50%) 0 2em/3em 2em, radial-gradient(1em 4em at 2.5em 0, white 48%, rgba(255, 255, 255, 0) 50%) 0 2em/3em 2em;
+    background-repeat: no-repeat;
+  }
+  .cat__segment:nth-of-type(1) {
+    transform: translate(-50%, -50%) rotate(-20deg);
+  }
+  .cat__segment:nth-of-type(1):before {
+    animation-delay: 0s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(2) {
+    transform: translate(-50%, -50%) rotate(-18.6666666667deg);
+  }
+  .cat__segment:nth-of-type(2):before {
+    animation-delay: 0.02s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(3) {
+    transform: translate(-50%, -50%) rotate(-17.3333333333deg);
+  }
+  .cat__segment:nth-of-type(3):before {
+    animation-delay: 0.04s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(4) {
+    transform: translate(-50%, -50%) rotate(-16deg);
+  }
+  .cat__segment:nth-of-type(4):before {
+    animation-delay: 0.06s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(5) {
+    transform: translate(-50%, -50%) rotate(-14.6666666667deg);
+  }
+  .cat__segment:nth-of-type(5):before {
+    animation-delay: 0.08s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(6) {
+    transform: translate(-50%, -50%) rotate(-13.3333333333deg);
+  }
+  .cat__segment:nth-of-type(6):before {
+    animation-delay: 0.1s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(7) {
+    transform: translate(-50%, -50%) rotate(-12deg);
+  }
+  .cat__segment:nth-of-type(7):before {
+    animation-delay: 0.12s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(8) {
+    transform: translate(-50%, -50%) rotate(-10.6666666667deg);
+  }
+  .cat__segment:nth-of-type(8):before {
+    animation-delay: 0.14s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(9) {
+    transform: translate(-50%, -50%) rotate(-9.3333333333deg);
+  }
+  .cat__segment:nth-of-type(9):before {
+    animation-delay: 0.16s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(10) {
+    transform: translate(-50%, -50%) rotate(-8deg);
+  }
+  .cat__segment:nth-of-type(10):before {
+    animation-delay: 0.18s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(11) {
+    transform: translate(-50%, -50%) rotate(-6.6666666667deg);
+  }
+  .cat__segment:nth-of-type(11):before {
+    animation-delay: 0.2s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(12) {
+    transform: translate(-50%, -50%) rotate(-5.3333333333deg);
+  }
+  .cat__segment:nth-of-type(12):before {
+    animation-delay: 0.22s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(13) {
+    transform: translate(-50%, -50%) rotate(-4deg);
+  }
+  .cat__segment:nth-of-type(13):before {
+    animation-delay: 0.24s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(14) {
+    transform: translate(-50%, -50%) rotate(-2.6666666667deg);
+  }
+  .cat__segment:nth-of-type(14):before {
+    animation-delay: 0.26s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(15) {
+    transform: translate(-50%, -50%) rotate(-1.3333333333deg);
+  }
+  .cat__segment:nth-of-type(15):before {
+    animation-delay: 0.28s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(16) {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .cat__segment:nth-of-type(16):before {
+    animation-delay: 0.3s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(17) {
+    transform: translate(-50%, -50%) rotate(1.3333333333deg);
+  }
+  .cat__segment:nth-of-type(17):before {
+    animation-delay: 0.32s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(18) {
+    transform: translate(-50%, -50%) rotate(2.6666666667deg);
+  }
+  .cat__segment:nth-of-type(18):before {
+    animation-delay: 0.34s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(19) {
+    transform: translate(-50%, -50%) rotate(4deg);
+  }
+  .cat__segment:nth-of-type(19):before {
+    animation-delay: 0.36s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(20) {
+    transform: translate(-50%, -50%) rotate(5.3333333333deg);
+  }
+  .cat__segment:nth-of-type(20):before {
+    animation-delay: 0.38s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(21) {
+    transform: translate(-50%, -50%) rotate(6.6666666667deg);
+  }
+  .cat__segment:nth-of-type(21):before {
+    animation-delay: 0.4s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(22) {
+    transform: translate(-50%, -50%) rotate(8deg);
+  }
+  .cat__segment:nth-of-type(22):before {
+    animation-delay: 0.42s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(23) {
+    transform: translate(-50%, -50%) rotate(9.3333333333deg);
+  }
+  .cat__segment:nth-of-type(23):before {
+    animation-delay: 0.44s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(24) {
+    transform: translate(-50%, -50%) rotate(10.6666666667deg);
+  }
+  .cat__segment:nth-of-type(24):before {
+    animation-delay: 0.46s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(25) {
+    transform: translate(-50%, -50%) rotate(12deg);
+  }
+  .cat__segment:nth-of-type(25):before {
+    animation-delay: 0.48s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(26) {
+    transform: translate(-50%, -50%) rotate(13.3333333333deg);
+  }
+  .cat__segment:nth-of-type(26):before {
+    animation-delay: 0.5s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(27) {
+    transform: translate(-50%, -50%) rotate(14.6666666667deg);
+  }
+  .cat__segment:nth-of-type(27):before {
+    animation-delay: 0.52s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(28) {
+    transform: translate(-50%, -50%) rotate(16deg);
+  }
+  .cat__segment:nth-of-type(28):before {
+    animation-delay: 0.54s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(29) {
+    transform: translate(-50%, -50%) rotate(17.3333333333deg);
+  }
+  .cat__segment:nth-of-type(29):before {
+    animation-delay: 0.56s;
+    transform: translateX(6em);
+  }
+  .cat__segment:nth-of-type(30) {
+    transform: translate(-50%, -50%) rotate(18.6666666667deg);
+  }
+  .cat__segment:nth-of-type(30):before {
+    animation-delay: 0.58s;
+    transform: translateX(6em);
+  }
+  
+  @keyframes loop {
+    from {
+      transform: rotate(0) translateX(6em);
+    }
+    to {
+      transform: rotate(-1turn) translateX(6em);
+    }
+  }
+
+/* Animasi menghilangkan preloader */
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+
+/* Menu Styles */
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85px;
+    height: 100vh;
+    transition: .3s;
+    scrollbar-width: none;
+    overflow: hidden scroll;
+    background: #ffffff12;
+    -ms-overflow-style: none;
+    padding: 20px 20px 20px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 8px 0px 9px 0px #00000014;
+    z-index: 1000;
+}
+
+.menu:hover {
+    width: 260px;
+}
+
+.menu:hover li span:nth-child(2) {
+    display: block;
+}
+
+.menu-content li {
+    list-style: none;
+    border-radius: 0px 50px 50px 0;
+    transition: .3s;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-content li:hover {
+    background: #0c0c0c;
+}
+
+.menu-content li span:nth-child(2) {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(213, 213, 213);
+    display: flex;
+    align-items: center;
+    font-family: 'calibri';
+}
+
+.material-symbols-outlined {
+    padding: 10px;
+    font-size: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #0c0c0c;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 140px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: all 0.5s ease;
+}
+
+.highlight {
+    display: block;
+}
+
+.gradient {
+    background: linear-gradient(45deg, #00C6FF, #0072FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Section Styles */
+.section {
+    padding: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: calc(100% - 100px);
+    margin: 50px auto 50px 100px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Container for images */
+.container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid rgba(225, 225, 225, 0.5);
+    transition: all ease-in-out 0.4s;
+}
+
+.container img:hover {
+    transform: scale(2);
+}
+
+/* Background images for Foto Kenangan */
+.foto-kenangan {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    opacity: 0.2;
+    filter: blur(5px);
+}
+
+.foto-kenangan img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* Background images for Foto MyFuv */
+.foto-myfuv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    opacity: 0.2;
+    filter: blur(5px);
+}
+
+.foto-myfuv img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* Ensure sections stay behind the menu */
+.content {
+    margin-left: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        font-size: 30px;
+        height: 100vh;
+    }
+    .section {
+        width: 90%;
+        padding: 30px;
+        margin-left: auto;
+    }
+    .foto-kenangan img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.tentang-saya {
+    width: 80%;
+    margin: 30px auto;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    color: #353333; /* Warna teks */
+    background: rgba(255, 255, 255, 0.05); /* Efek transparan */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan halus */
+}
+
+/* Untuk "Halo" dan "Ayah" agar lebih masuk ke kanan */
+.indent {
+    text-align: right;
+    font-size: 18px;
+    font-weight: 600;
+    color: #e7ca53; /* Warna emas */
+    margin-right: 50px;
+}
+
+/* Efek Fade-In untuk teks */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Justify untuk paragraf lainnya */
+.justify {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Efek hover agar lebih interaktif */
+.indent:hover {
+    color: #ff6600; /* Warna oranye saat dihover */
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+@media (max-width: 480px) {
+    /* Ukuran menu lebih kecil */
+    .menu {
+        width: 70px;
+        padding: 15px 10px;
+    }
+
+    .menu:hover {
+        width: 200px;
+    }
+
+    /* Ukuran ikon dalam menu lebih kecil */
+    .material-symbols-outlined {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    /* Hero Section lebih kecil */
+    .hero {
+        font-size: 24px;
+        margin-top: 100px;
+        height: 80vh;
+    }
+
+    /* Ukuran teks lebih kecil */
+    .section {
+        padding: 20px;
+        width: 95%;
+        margin-left: auto;
+    }
+
+    /* Ukuran gambar lebih kecil */
+    .container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container img:hover {
+        transform: scale(1.5);
+    }
+
+    /* Background Foto lebih kecil */
+    .foto-kenangan img,
+    .foto-myfuv img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Tentang Saya lebih nyaman dibaca */
+    .tentang-saya {
+        width: 90%;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .indent {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+}
